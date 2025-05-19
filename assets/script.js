@@ -1,7 +1,6 @@
 const container = document.querySelector("#container");
-const rowCount = columnCount = 16;
-const totalNumberOfSquare = rowCount*columnCount;
-const squareHeight = squareWidth = container.clientWidth/16;
+let squarePerSideCount = 16;
+let totalNumberOfSquare = squarePerSideCount ** 2;
 
 function createNewGrid(squarePerSideCount){
   let squareHeight = container.clientHeight/squarePerSideCount;
@@ -53,7 +52,7 @@ gridSizeBtn.addEventListener("click", () => {
 });
 
 //Function to prompt the user for the number of squares per side
-function promptUser(message=""){
+function promptUser(message){
   return parseInt(prompt(message + "Enter the number of squares in a side for the new grid[1-100]: "));
 }
 
